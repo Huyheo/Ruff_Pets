@@ -1,0 +1,228 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		home
+	 *	@date 		1624157446680
+	 *	@title 		Page 2
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/google_pixel_2_xl___4" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+
+
+
+			<RelativeLayout android:id="@+id/page_google_pixel_2_xl___4_ek1"
+				android:layout_marginTop="0dp"
+				android:layout_marginStart="0dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+
+				<View android:id="@+id/_bg__google_pixel_2_xl___4_ek2"
+					android:background="@drawable/_bg__google_pixel_2_xl___4_ek2_shape"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="411dp"
+					android:layout_height="823dp" />
+
+
+				<RelativeLayout
+					android:id="@+id/frame_17_ek4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="-1dp">
+
+
+					<RelativeLayout android:id="@+id/arrow_back_ek5"
+						android:layout_marginTop="10dp"
+						android:layout_marginStart="10dp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						>
+
+						<ImageView android:id="@+id/vector_ek126"
+							android:src="@drawable/vector_ek126"
+							android:contentDescription="vector_ek126"
+							android:layout_marginStart="0dp"
+							android:layout_marginTop="0dp"
+							android:layout_width="40dp"
+							android:layout_height="40dp" />
+
+						<ImageView android:id="@+id/vector_ek127"
+							android:src="@drawable/vector_ek127"
+							android:contentDescription="vector_ek127"
+							android:layout_marginStart="6.67dp"
+							android:layout_marginTop="6.67dp"
+							android:layout_width="26.67dp"
+							android:layout_height="26.67dp" />
+
+					</RelativeLayout>
+
+
+					<RelativeLayout android:id="@+id/frame_34_ek2"
+						android:layout_marginTop="60dp"
+						android:layout_marginStart="0dp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						>
+
+					</RelativeLayout>
+
+				</RelativeLayout>
+
+
+				<RelativeLayout android:id="@+id/frame_18_ek1"
+					android:layout_marginTop="60dp"
+					android:layout_marginStart="0dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+					<ImageView android:id="@+id/rectangle_15_ek1"
+						android:src="@drawable/rectangle_15_ek1"
+						android:contentDescription="rectangle_15_ek1"
+						 android:layout_marginStart="0dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="411dp"
+						android:layout_height="411dp" />
+
+					<TextView android:id="@+id/d_ch_v__t_m_r_a_cho_ch__ek1"
+						
+						android:textStyle="bold"
+						android:textSize="26sp"
+						android:textColor="@color/search_color"
+						android:layout_marginLeft="15dp"
+						android:layout_marginTop="430dp"
+						android:layout_width="301dp"
+						android:layout_height="48dp"
+						android:text="Dịch vụ tắm rửa cho "
+						 />
+
+
+					<RelativeLayout android:id="@+id/location_on_ek2"
+						android:layout_marginTop="475dp"
+						android:layout_marginStart="16dp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						>
+
+						<ImageView android:id="@+id/vector_ek102"
+							android:src="@drawable/vector_ek102"
+							android:contentDescription="vector_ek102"
+							 android:layout_marginStart="5dp"
+							android:layout_marginTop="2dp"
+							android:layout_width="14dp"
+							android:layout_height="20dp" />
+
+						<ImageView android:id="@+id/vector_ek103"
+							android:src="@drawable/vector_ek103"
+							android:contentDescription="vector_ek103"
+							 android:layout_marginStart="0dp"
+							android:layout_marginTop="0dp"
+							android:layout_width="24dp"
+							android:layout_height="24dp" />
+
+					</RelativeLayout>
+
+					<TextView android:id="@+id/h_i_ch_u_____n_ng_ek1"
+						
+						android:textSize="13sp"
+						android:textColor="@color/search_color"
+						android:layout_marginLeft="40dp"
+						android:layout_marginTop="479dp"
+						android:layout_width="121dp"
+						android:layout_height="24.5dp"
+						android:text="@string/h_i_ch_u_____n_ng_ek1_string"
+						 />
+
+					<TextView android:id="@+id/_100_000_vn__ek15"
+						
+						android:textSize="20sp"
+						android:textColor="@color/_100_000_vn__color"
+						android:layout_marginLeft="276dp"
+						android:layout_marginTop="474dp"
+						android:layout_width="134dp"
+						android:layout_height="37dp"
+						android:text="@string/_100_000_vn__ek15_string"
+						 />
+
+					<TextView android:id="@+id/chi_ti_t_ek1"
+						
+						android:textStyle="bold"
+						android:textSize="20sp"
+						android:textColor="@color/search_color"
+						android:layout_marginLeft="15dp"
+						android:layout_marginTop="534dp"
+						android:layout_width="80dp"
+						android:layout_height="37dp"
+						android:text="Chi tiết"
+						 />
+
+
+					<RelativeLayout android:id="@+id/frame_26_ek1"
+						android:layout_marginTop="703dp"
+						android:layout_marginStart="0dp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						>
+
+						<View android:id="@+id/rectangle_18_ek1"
+							android:background="@drawable/rectangle_18_ek1_shape"
+							 android:layout_marginStart="0dp"
+							android:layout_marginTop="2dp"
+							android:layout_width="411dp"
+							android:layout_height="60dp" />
+
+						<TextView android:id="@+id/li_n_h__ek1"
+							
+							android:textStyle="bold"
+							android:textSize="20sp"
+							android:textColor="@color/search_color"
+							android:layout_marginLeft="162dp"
+							android:layout_marginTop="20dp"
+							android:layout_width="81dp"
+							android:layout_height="37dp"
+							android:text="Liên hệ"
+							 />
+
+					</RelativeLayout>
+
+					<TextView android:id="@+id/detail"
+						
+						android:textSize="20sp"
+						android:textColor="@color/search_color"
+						android:layout_marginLeft="25dp"
+						android:layout_marginTop="563dp"
+						android:layout_width="376dp"
+						android:layout_height="127dp"
+						android:text="@string/v_i_quy_tr_nh_t_m_kh__m_i_h_i__d__ng_d_u_x__m_m_m__t__v__sinh_tai__s_y_v__ch_i_l_ng__c_t_m_i_m_ng__g__r_i_v__ch_i_l_ng_r_ng_c_a_ch_ng_t_i_s__l_m_cho_v_t_nu_i_c_a_c_c_b_n_s_ch_s___th_m_tho_h_n_string"
+						 />
+
+				</RelativeLayout>
+
+			</RelativeLayout>
+
+
+
+
+		</RelativeLayout>
+
+	</ScrollView>
+</HorizontalScrollView>
