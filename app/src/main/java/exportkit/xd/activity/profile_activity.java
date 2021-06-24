@@ -34,6 +34,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -42,16 +44,23 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 import exportkit.xd.R;
+import exportkit.xd.adapter.DogListAdapter;
 import exportkit.xd.model.Upload;
+import exportkit.xd.model.dog;
 
 	public class profile_activity extends Activity {
 	private static final int PICK_IMAGE_REQUEST = 1;
@@ -65,6 +74,10 @@ import exportkit.xd.model.Upload;
 	private StorageReference mStorageref;
 	private DatabaseReference mDatabaseref;
 	private FirebaseUser user;
+	private DogListAdapter dogListAdapter;
+	private RecyclerView listdog;
+	private DatabaseReference dogDatabae;
+	private ArrayList<dog> dogs;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -79,10 +92,41 @@ import exportkit.xd.model.Upload;
 		logout=findViewById(R.id.frame_36);
 		username=findViewById(R.id.username);
 		img=findViewById(R.id.ellipse_1);
+
+		listdog=findViewById(R.id.list_dog);
+
+		user = FirebaseAuth.getInstance().getCurrentUser();
+
+		dogDatabae= FirebaseDatabase.getInstance().getReference().child("dog");
+		dogs = new ArrayList<>();
+
+		listdog.setLayoutManager(new GridLayoutManager(this, 2));
+		dogListAdapter = new DogListAdapter(dogs);
+
+		listdog.setAdapter(dogListAdapter);
+
+		dogDatabae.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+				dogs.clear();
+				for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+					dog dog = snapshot.getValue(dog.class);
+					if (dog.getIdchu().equals(user.getUid())){
+						dogs.add(dog);
+					}
+				}
+				dogListAdapter.notifyDataSetChanged();
+			}
+
+			@Override
+			public void onCancelled(@NonNull DatabaseError databaseError) {
+
+			}
+		});
+
 		mStorageref = FirebaseStorage.getInstance().getReference("Upload Photos");
 		mDatabaseref = FirebaseDatabase.getInstance().getReference("Upload Photos");
 
-		user = FirebaseAuth.getInstance().getCurrentUser();
 		if (user.getDisplayName().equals(""))username.setText(user.getEmail());
 		else username.setText(user.getDisplayName());
 		if (user.getPhotoUrl().toString().length()>0) {

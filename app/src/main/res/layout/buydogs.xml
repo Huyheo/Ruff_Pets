@@ -26,7 +26,6 @@
 			android:layout_height="wrap_content" >
 
 
-
 			<RelativeLayout android:id="@+id/page_buydogs_ek1"
 				android:layout_marginTop="0dp"
 				android:layout_marginStart="0dp"
@@ -34,20 +33,13 @@
 				android:layout_height="wrap_content"
 				>
 
-				<EditText
-					android:id="@+id/etSearch"
-					android:layout_width="310dp"
-					android:layout_height="40dp"
-					android:layout_marginLeft="40dp"
-					android:layout_marginTop="86dp"
-					android:ems="10"
-					android:hint="Search" />
-
 				<RelativeLayout android:id="@+id/frame_3"
 					android:layout_marginTop="0dp"
 					android:layout_marginStart="0dp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:focusable="true"
+					android:focusableInTouchMode="true"
 					>
 
 					<View android:id="@+id/rectangle_1"
@@ -78,32 +70,15 @@
 						android:layout_height="34dp"
 						android:text="@string/buy_puppies_string"
 						 />
-
-
-					<RelativeLayout android:id="@+id/search_ek1"
-						android:layout_marginTop="94dp"
-						android:layout_marginStart="354dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						>
-
-						<ImageView android:id="@+id/vector"
-							android:src="@drawable/vector"
-							android:contentDescription="vector"
-							 android:layout_marginStart="3dp"
-							android:layout_marginTop="3dp"
-							android:layout_width="17.49dp"
-							android:layout_height="17.49dp" />
-
-						<ImageView android:id="@+id/vector_ek1"
-							android:src="@drawable/vector_ek1"
-							android:contentDescription="vector_ek1"
-							 android:layout_marginStart="0dp"
-							android:layout_marginTop="0dp"
-							android:layout_width="24dp"
-							android:layout_height="24dp" />
-
-					</RelativeLayout>
+					<SearchView
+						android:id="@+id/etSearch"
+						android:layout_width="330dp"
+						android:layout_height="40dp"
+						android:layout_marginLeft="40dp"
+						android:layout_marginTop="86dp"
+						android:ems="10"
+						android:hint="Search"
+						/>
 
 				</RelativeLayout>
 

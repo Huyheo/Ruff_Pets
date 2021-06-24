@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import exportkit.xd.R;
@@ -18,7 +20,7 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
     private ArrayList<dichvu> dichvus;
     private int id;
 
-    public ServiceListAdapter(ArrayList<dichvu> dogs) {
+    public ServiceListAdapter(ArrayList<dichvu> dichvus) {
         this.dichvus = dichvus;
     }
 
@@ -30,11 +32,16 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
 
         return new ViewHolder(view);
     }
+    public OnBindCallback onBind;
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        if (onBind != null) {
+            onBind.onViewBound(holder, position);
+        }
         holder.title.setText(dichvus.get(position).getTitle());
-        holder.gia.setText(dichvus.get(position).getGia());
+        holder.gia.setText(dichvus.get(position).getGia()+" VNĐ");
+        Picasso.get().load(dichvus.get(position).getHinhanh()).into(holder.img);
         id = holder.getLayoutPosition();
     }
 
@@ -80,5 +87,8 @@ public class ServiceListAdapter extends RecyclerView.Adapter<ServiceListAdapter.
         }
     }
 
+    public interface OnBindCallback {
+        void onViewBound(ServiceListAdapter.ViewHolder viewHolder, int position);
+    }
 
 }

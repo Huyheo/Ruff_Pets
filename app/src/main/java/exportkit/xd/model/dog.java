@@ -2,6 +2,7 @@ package exportkit.xd.model;
 
 public class dog {
     private int id;
+    private String idchu;
     private String title;
     private String mota;
     private String gia;
@@ -14,14 +15,6 @@ public class dog {
     private String hinhanh;
 
     public dog() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -104,8 +97,25 @@ public class dog {
         this.hinhanh = hinhanh;
     }
 
-    public dog(int id, String title, String mota, String gia, String diachi, String loai, String age, float can_nang, String gioitinh, boolean trang_thai, String hinhanh) {
+    public String getIdchu() {
+        return idchu;
+    }
+
+    public void setIdchu(String idchu) {
+        this.idchu = idchu;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public dog(int id, String idchu, String title, String mota, String gia, String diachi, String loai, String age, float can_nang, String gioitinh, boolean trang_thai, String hinhanh) {
+        this.id = id;
+        this.idchu = idchu;
         this.title = title;
         this.mota = mota;
         this.gia = gia;

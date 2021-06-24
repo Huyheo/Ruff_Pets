@@ -9,14 +9,26 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import exportkit.xd.R;
+import exportkit.xd.adapter.DogListAdapter;
+import exportkit.xd.model.User;
+import exportkit.xd.model.dog;
 
 public class editprofile_activity extends Activity {
 
@@ -26,6 +38,10 @@ public class editprofile_activity extends Activity {
     private EditText phone;
     private EditText nickname;
     private RelativeLayout buttonOk;
+    private FirebaseUser user;
+    private User u;
+    private Task<DataSnapshot> dogDatabae;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -39,21 +55,28 @@ public class editprofile_activity extends Activity {
         phone=findViewById(R.id.editPhone);
         nickname=findViewById(R.id.nickname);
         buttonOk=findViewById(R.id.button);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        u=new User();
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        email.setText(user.getEmail());
+        nickname.setText((user.getDisplayName()));
 
-        buttonOk.setOnClickListener(new View.OnClickListener() {
+        mDatabase.child("User").child(user.getUid()).
+                get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onClick(View v) {
-                updateProfile();
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Toast.makeText(editprofile_activity.this, "Error getting data", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    u = (User) task.getResult().getValue(User.class);
+                    phone.setText(u.getPhone());
+                }
             }
         });
 
 
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        email.setText(user.getEmail());
-        nickname.setText((user.getDisplayName()));
-        phone.setText((user.getPhoneNumber()));
 
         changepass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +91,13 @@ public class editprofile_activity extends Activity {
                 finish();
             }
         });
+
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateProfile();
+            }
+        });
     }
 
     private void updateProfile(){
@@ -75,7 +105,6 @@ public class editprofile_activity extends Activity {
         String txt_phone = phone.getText().toString();
         String txt_nickname = nickname.getText().toString();
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(txt_nickname)
@@ -103,6 +132,10 @@ public class editprofile_activity extends Activity {
                             }
                         }
                     });
+        }
+        if (txt_phone.length()>0){
+            mDatabase.child("User").child(user.getUid()).child("phone").setValue(txt_phone);
+            Toast.makeText(editprofile_activity.this, "User phone number updated.", Toast.LENGTH_SHORT).show();
         }
     }
 }
