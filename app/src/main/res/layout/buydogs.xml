@@ -254,7 +254,17 @@
 
 				</RelativeLayout>
 
-<!--				<androidx.recyclerview.widget.RecyclerView-->
+				<com.google.android.material.floatingactionbutton.FloatingActionButton
+					android:id="@+id/addItem"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="600dp"
+					android:layout_marginLeft="330dp"
+					android:clickable="true"
+					app:srcCompat="@drawable/ic_baseline_add_24" />
+
+
+				<!--				<androidx.recyclerview.widget.RecyclerView-->
 <!--					android:layout_width="match_parent"-->
 <!--					android:layout_height="627dp"-->
 <!--					android:layout_below="@id/frame_3"-->

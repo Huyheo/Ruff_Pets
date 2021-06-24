@@ -15,7 +15,7 @@
 	 */
 	
 
-package exportkit.xd;
+package exportkit.xd.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -25,15 +25,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class buydog_detail_activity extends Activity {
+import exportkit.xd.R;
+
+    public class service_detail_activity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.buydog_detail);
-
-	
+		setContentView(R.layout.service_detail);
 	}
 }
 	

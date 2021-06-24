@@ -15,7 +15,7 @@
 	 */
 	
 
-package exportkit.xd;
+package exportkit.xd.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,14 +23,16 @@ import android.os.Bundle;
 
 
 import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.ImageView;
 
-public class buydogs_activity extends Activity {
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import exportkit.xd.R;
+
+	public class buydogs_activity extends Activity {
 
 	private View serviecs;
 	private View profile;
+	private FloatingActionButton addBtn;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class buydogs_activity extends Activity {
 
 		serviecs=findViewById(R.id.rectangle_2_ek1);
 		profile=findViewById(R.id.rectangle_2_ek2);
+		addBtn=findViewById(R.id.addItem);
 
 		serviecs.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -54,6 +57,13 @@ public class buydogs_activity extends Activity {
 			public void onClick(View v) {
 				startActivity(new Intent(buydogs_activity.this , profile_activity.class));
 				finish();
+			}
+		});
+
+		addBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(buydogs_activity.this , buydog_detail_activity.class));
 			}
 		});
 	}

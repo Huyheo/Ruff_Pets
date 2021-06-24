@@ -15,7 +15,7 @@
 	 */
 	
 
-package exportkit.xd;
+package exportkit.xd.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -35,7 +35,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-	public class home_activity extends Activity {
+import exportkit.xd.R;
+
+    public class home_activity extends Activity {
 
 
 	private EditText email;

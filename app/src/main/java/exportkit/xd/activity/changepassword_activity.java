@@ -15,10 +15,9 @@
 	 */
 	
 
-package exportkit.xd;
+package exportkit.xd.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -35,7 +34,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-	public class changepassword_activity extends Activity {
+import exportkit.xd.R;
+
+    public class changepassword_activity extends Activity {
 
 	private RelativeLayout back;
 	private RelativeLayout changepass;

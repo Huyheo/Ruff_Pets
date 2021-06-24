@@ -136,7 +136,7 @@
                         android:background="@drawable/rectangle_3_shape" />
 
                     <EditText
-                        android:id="@+id/editTextTextEmailAddress"
+                        android:id="@+id/email"
                         android:layout_width="337dp"
                         android:layout_height="wrap_content"
                         android:ems="10"

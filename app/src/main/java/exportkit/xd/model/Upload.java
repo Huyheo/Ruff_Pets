@@ -1,4 +1,4 @@
-package exportkit.xd;
+package exportkit.xd.model;
 
 public class Upload {
     private String mName;

@@ -15,7 +15,7 @@
 	 */
 	
 
-package exportkit.xd;
+package exportkit.xd.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -50,6 +50,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import exportkit.xd.R;
+import exportkit.xd.model.Upload;
+
 	public class profile_activity extends Activity {
 	private static final int PICK_IMAGE_REQUEST = 1;
 	private View editprofile;
@@ -80,11 +83,13 @@ import com.squareup.picasso.Picasso;
 		mDatabaseref = FirebaseDatabase.getInstance().getReference("Upload Photos");
 
 		user = FirebaseAuth.getInstance().getCurrentUser();
-		username.setText(user.getEmail());
-		Picasso.get().load(user.getPhotoUrl()).into(img);
+		if (user.getDisplayName().equals(""))username.setText(user.getEmail());
+		else username.setText(user.getDisplayName());
+		if (user.getPhotoUrl().toString().length()>0) {
+			Picasso.get().load(user.getPhotoUrl()).into(img);
+		}
 
 		editprofile.setOnClickListener(new View.OnClickListener() {
-		
 			public void onClick(View v) {
 				startActivity(new Intent(profile_activity.this , editprofile_activity.class));
 			}

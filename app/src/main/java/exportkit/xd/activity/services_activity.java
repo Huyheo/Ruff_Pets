@@ -15,7 +15,7 @@
 	 */
 	
 
-package exportkit.xd;
+package exportkit.xd.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,10 +23,10 @@ import android.os.Bundle;
 
 
 import android.view.View;
-import android.widget.TextView;
-import android.widget.ImageView;
 
-public class services_activity extends Activity {
+import exportkit.xd.R;
+
+    public class services_activity extends Activity {
 
 	private View buydog;
 	private View profile;
