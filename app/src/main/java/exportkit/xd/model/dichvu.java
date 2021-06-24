@@ -4,19 +4,8 @@ public class dichvu {
     private String gia;
     private String title;
     private String mota;
-    private String url;
+    private String hinhanh;
     private int id;
-
-    public dichvu(String gia, String title, String mota, String url, int id) {
-        this.gia = gia;
-        this.title = title;
-        this.mota = mota;
-        this.url = url;
-        this.id = id;
-    }
-
-    public dichvu() {
-    }
 
     public String getGia() {
         return gia;
@@ -42,12 +31,12 @@ public class dichvu {
         this.mota = mota;
     }
 
-    public String getUrl() {
-        return url;
+    public String getHinhanh() {
+        return hinhanh;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setHinhanh(String hinhanh) {
+        this.hinhanh = hinhanh;
     }
 
     public int getId() {
@@ -56,5 +45,16 @@ public class dichvu {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public dichvu(String gia, String title, String mota, String hinhanh, int id) {
+        this.gia = gia;
+        this.title = title;
+        this.mota = mota;
+        this.hinhanh = hinhanh;
+        this.id = id;
+    }
+
+    public dichvu() {
     }
 }

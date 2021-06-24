@@ -34,18 +34,19 @@
 				android:layout_height="wrap_content"
 				>
 
-				<View android:id="@+id/_bg__buydogs_ek2"
-					android:background="@drawable/_bg__buydogs_ek2_shape"
-					 android:layout_marginStart="0dp"
-					android:layout_marginTop="0dp"
-					android:layout_width="411dp"
-					android:layout_height="823dp" />
-
+				<EditText
+					android:id="@+id/etSearch"
+					android:layout_width="310dp"
+					android:layout_height="40dp"
+					android:layout_marginLeft="40dp"
+					android:layout_marginTop="86dp"
+					android:ems="10"
+					android:hint="Search" />
 
 				<RelativeLayout android:id="@+id/frame_3"
 					android:layout_marginTop="0dp"
 					android:layout_marginStart="0dp"
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					>
 
@@ -106,19 +107,10 @@
 
 				</RelativeLayout>
 
-				<EditText
-					android:id="@+id/etSearch"
-					android:layout_width="310dp"
-					android:layout_height="40dp"
-					android:layout_marginLeft="40dp"
-					android:layout_marginTop="86dp"
-					android:ems="10"
-					android:hint="Search" />
 
 				<RelativeLayout android:id="@+id/frame_20"
-					android:layout_marginTop="763dp"
 					android:layout_marginStart="0dp"
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_alignParentBottom="true"
 					>
@@ -264,13 +256,16 @@
 					app:srcCompat="@drawable/ic_baseline_add_24" />
 
 
-				<!--				<androidx.recyclerview.widget.RecyclerView-->
-<!--					android:layout_width="match_parent"-->
-<!--					android:layout_height="627dp"-->
-<!--					android:layout_below="@id/frame_3"-->
-<!--					android:layout_marginTop="10dp"-->
-<!--					app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-<!--					app:spanCount="2" />-->
+				<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/list_dog"
+					android:layout_width="match_parent"
+					android:layout_height="627dp"
+					android:layout_below="@id/frame_3"
+					android:layout_marginTop="10dp"
+					android:layout_marginBottom="0dp"
+					android:layout_above="@+id/frame_20"
+					app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+					app:spanCount="2" />
 			</RelativeLayout>
 
 

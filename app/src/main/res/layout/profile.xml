@@ -31,22 +31,15 @@
 			<RelativeLayout android:id="@+id/page_profile_ek1"
 				android:layout_marginTop="0dp"
 				android:layout_marginStart="0dp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
 				>
-
-				<View android:id="@+id/_bg__profile_ek2"
-					android:background="@drawable/_bg__profile_ek2_shape"
-					 android:layout_marginStart="0dp"
-					android:layout_marginTop="0dp"
-					android:layout_width="411dp"
-					android:layout_height="823dp" />
 
 
 				<RelativeLayout android:id="@+id/frame_20_ek1"
 					android:layout_marginTop="0dp"
-					android:layout_marginStart="2dp"
-					android:layout_width="wrap_content"
+					android:layout_marginStart="0dp"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					>
 
@@ -198,7 +191,6 @@
 
 
 				<RelativeLayout android:id="@+id/frame_20_ek2"
-					android:layout_marginTop="763dp"
 					android:layout_marginStart="2dp"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -336,13 +328,14 @@
 
 				</RelativeLayout>
 
-<!--				<androidx.recyclerview.widget.RecyclerView-->
-<!--					android:layout_width="match_parent"-->
-<!--					android:layout_height="510dp"-->
-<!--					android:layout_below="@id/frame_20_ek1"-->
-<!--					android:layout_marginTop="10dp"-->
-<!--					app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-<!--					app:spanCount="2" />-->
+				<androidx.recyclerview.widget.RecyclerView
+					android:layout_width="match_parent"
+					android:layout_height="510dp"
+					android:layout_below="@id/frame_20_ek1"
+					android:layout_marginTop="10dp"
+					android:layout_above="@+id/frame_20_ek2"
+					app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+					app:spanCount="2" />
 			</RelativeLayout>
 
 		</RelativeLayout>

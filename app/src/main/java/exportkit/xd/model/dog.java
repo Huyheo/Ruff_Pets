@@ -10,24 +10,10 @@ public class dog {
     private String age;
     private float can_nang;
     private String gioitinh;
-    private String trang_thai;
-    private String url;
+    private boolean trang_thai;
+    private String hinhanh;
 
     public dog() {
-    }
-
-    public dog(int id, String title, String mota, String gia, String diachi, String loai, String age, float can_nang, String gioitinh, String trang_thai, String url) {
-        this.id = id;
-        this.title = title;
-        this.mota = mota;
-        this.gia = gia;
-        this.diachi = diachi;
-        this.loai = loai;
-        this.age = age;
-        this.can_nang = can_nang;
-        this.gioitinh = gioitinh;
-        this.trang_thai = trang_thai;
-        this.url = url;
     }
 
     public int getId() {
@@ -102,19 +88,33 @@ public class dog {
         this.gioitinh = gioitinh;
     }
 
-    public String getTrang_thai() {
+    public boolean isTrang_thai() {
         return trang_thai;
     }
 
-    public void setTrang_thai(String trang_thai) {
+    public void setTrang_thai(boolean trang_thai) {
         this.trang_thai = trang_thai;
     }
 
-    public String getUrl() {
-        return url;
+    public String getHinhanh() {
+        return hinhanh;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setHinhanh(String hinhanh) {
+        this.hinhanh = hinhanh;
+    }
+
+    public dog(int id, String title, String mota, String gia, String diachi, String loai, String age, float can_nang, String gioitinh, boolean trang_thai, String hinhanh) {
+        this.id = id;
+        this.title = title;
+        this.mota = mota;
+        this.gia = gia;
+        this.diachi = diachi;
+        this.loai = loai;
+        this.age = age;
+        this.can_nang = can_nang;
+        this.gioitinh = gioitinh;
+        this.trang_thai = trang_thai;
+        this.hinhanh = hinhanh;
     }
 }

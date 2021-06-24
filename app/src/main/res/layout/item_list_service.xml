@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     android:elevation="10dp">
@@ -17,9 +17,10 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_width="371dp"
-            android:layout_height="229dp" />
+            android:layout_height="229dp"
+            android:scaleType="centerCrop"/>
 
-        <TextView android:id="@+id/d_ch_v__t_m_r_a_cho_ch_"
+        <TextView android:id="@+id/title"
             android:textSize="26sp"
             android:textColor="@color/search_color"
             android:layout_marginLeft="26dp"
@@ -29,7 +30,7 @@
             android:text="Dịch vụ tắm rửa cho chó"
             />
 
-        <TextView android:id="@+id/_100_000_vn__ek12"
+        <TextView android:id="@+id/gia"
             android:textSize="14sp"
             android:textColor="@color/_100_000_vn__color"
             android:layout_marginLeft="26dp"
