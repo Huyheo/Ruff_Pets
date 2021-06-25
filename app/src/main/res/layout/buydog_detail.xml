@@ -329,7 +329,15 @@
 					android:layout_marginTop="2dp"
 					android:layout_marginLeft="350dp"
 					app:srcCompat="@drawable/vector_ek119"
-					android:visibility="gone"/>
+					android:visibility="visible"/>
+				<com.google.android.material.floatingactionbutton.FloatingActionButton
+					android:id="@+id/imageButton1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:layout_marginLeft="280dp"
+					app:srcCompat="@drawable/vector_ek65"
+					android:visibility="visible"/>
 
 			</RelativeLayout>
 

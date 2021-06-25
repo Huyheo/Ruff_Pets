@@ -18,6 +18,7 @@
 package exportkit.xd.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -69,6 +70,7 @@ public class buydog_detail_activity extends Activity {
 	private ImageView hinhanh;
 	private FloatingActionButton del;
 	private TextView status;
+	private RelativeLayout call;
 
 
 	@Override
@@ -89,10 +91,26 @@ public class buydog_detail_activity extends Activity {
 		sdt=findViewById(R.id.sdt1);
 		del=findViewById(R.id.imageButton);
 		status=findViewById(R.id.status);
+		call=findViewById(R.id.frame_26);
 
 		user = FirebaseAuth.getInstance().getCurrentUser();
 		mDatabase= FirebaseDatabase.getInstance().getReference();
 		dogs = new ArrayList<>();
+
+		call.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (status.getText().toString().equals("Liên hệ")){
+					String phone = (sdt.getText().toString().split(","))[1].trim();
+					if (phone.length() > 0) {
+						Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+						startActivity(intent);
+
+					}
+				}
+			}
+		});
+
 
 		mDatabase.child("dog").child("dog"+String.valueOf(input+1)).
 				get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
