@@ -118,7 +118,10 @@ public class buydog_detail_activity extends Activity {
 		edit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(buydog_detail_activity.this , buydog_edititem_activity.class));
+				Intent intent = new Intent(buydog_detail_activity.this , buydog_edititem_activity.class);
+				intent.putExtra("iddog",input);
+				startActivity(intent);
+				finish();
 			}
 		});
 
