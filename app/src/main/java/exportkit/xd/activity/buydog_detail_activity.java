@@ -135,6 +135,7 @@ public class buydog_detail_activity extends Activity {
 									public void onComplete(@NonNull Task<Void> task) {
 										if (task.isSuccessful()){
 											Toast.makeText(buydog_detail_activity.this, "Delete Successfully!", Toast.LENGTH_SHORT).show();
+											finish();
 										}
 										else Toast.makeText(buydog_detail_activity.this, "Delete Failed!", Toast.LENGTH_SHORT).show();
 									}

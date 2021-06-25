@@ -120,7 +120,7 @@
 						android:layout_height="56dp" />
 
 					<EditText
-						android:id="@+id/price"
+						android:id="@+id/gia"
 						android:layout_width="338dp"
 						android:layout_height="wrap_content"
 						android:ems="10"
@@ -151,7 +151,7 @@
 						android:layout_height="56dp" />
 
 					<EditText
-						android:id="@+id/address"
+						android:id="@+id/diachi"
 						android:layout_width="338dp"
 						android:layout_height="wrap_content"
 						android:ems="10"
@@ -432,6 +432,7 @@
 
 
 				<com.google.android.material.chip.ChipGroup
+					android:id="@+id/gioitinh"
 					android:layout_width="100dp"
 					android:layout_height="80dp"
 					android:layout_marginTop="355dp"
@@ -471,6 +472,7 @@
 					android:layout_height="80dp"
 					android:layout_marginTop="605dp"
 					android:layout_marginLeft="100dp"
+					android:scaleType="centerCrop"
 					app:srcCompat="@drawable/ellipse_1" />
 
 				<Button
