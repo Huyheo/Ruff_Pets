@@ -17,9 +17,6 @@
   - Xem/Sửa/Xoá/Tìm kiếm các bài đăng bán chó
   - Xem các bài đăng dịch vụ
 ## Screenshot
-![image](https://user-images.githubusercontent.com/45762333/123440895-7b7a8000-d5fd-11eb-8e28-b80fc56f62ce.png)
-
-
 ![image](https://user-images.githubusercontent.com/45762333/123439968-7e28a580-d5fc-11eb-8bd8-2fe6a6a7c17b.png)
 ![image](https://user-images.githubusercontent.com/45762333/123440138-aadcbd00-d5fc-11eb-81a2-ce8303e680d5.png)
 ![image](https://user-images.githubusercontent.com/45762333/123440620-2f2f4000-d5fd-11eb-95f7-8ac4b52799f2.png)
