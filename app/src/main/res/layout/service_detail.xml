@@ -150,7 +150,7 @@
 						android:layout_marginTop="390dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Hải Châu, Đà "
+						android:text="Hải Châu, Đà Nẵng"
 						/>
 					<TextView android:id="@+id/sdt"
 

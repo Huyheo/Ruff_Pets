@@ -17,10 +17,12 @@
 
 package exportkit.xd.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 
@@ -64,6 +66,7 @@ import exportkit.xd.model.dog;
 
 	public class profile_activity extends Activity {
 	private static final int PICK_IMAGE_REQUEST = 1;
+	private static final int REQUEST_CODE_DETAIL = 1;
 	private View editprofile;
 	private View buydog;
 	private View serviecs;
@@ -171,8 +174,24 @@ import exportkit.xd.model.dog;
 				finish();
 			}
 		});
-
-		}
+		dogListAdapter.onBind = (viewHolder, position) -> {
+			viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					Intent intent=new Intent(profile_activity.this, buydog_detail_activity.class);
+					String data;
+					AsyncTask.execute(new Runnable() {
+						@Override
+						public void run() {
+							@SuppressLint("ResourceType") String data = String.valueOf(dogListAdapter.getId(position));
+							intent.putExtra("EXTRA_DATA_INPUT", data);
+							startActivityForResult(intent,REQUEST_CODE_DETAIL);
+						}
+					});
+				}
+			});
+		};
+	}
 	private String getFileExtension(Uri uri){
 		ContentResolver cr = getContentResolver();
 		MimeTypeMap mime = MimeTypeMap.getSingleton();
@@ -244,26 +263,25 @@ import exportkit.xd.model.dog;
 				});
 	}
 
-		private void openfilechooser() {
-			Intent intent = new Intent();
-			intent.setType("image/*");
-			intent.setAction(Intent.ACTION_GET_CONTENT);
-			startActivityForResult(intent,PICK_IMAGE_REQUEST);
-//			uploadfile();
+	private void openfilechooser() {
+		Intent intent = new Intent();
+		intent.setType("image/*");
+		intent.setAction(Intent.ACTION_GET_CONTENT);
+		startActivityForResult(intent,PICK_IMAGE_REQUEST);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data !=null &&
+				data.getData()!=null){
+			imageuri = data.getData();
+			Picasso.get().load(imageuri).into(img);
+			uploadfile();
 
 		}
+	}
 
-		@Override
-		protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-			super.onActivityResult(requestCode, resultCode, data);
-			if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data !=null &&
-					data.getData()!=null){
-				imageuri = data.getData();
-				Picasso.get().load(imageuri).into(img);
-				uploadfile();
-
-			}
-		}
 }
 	
 	

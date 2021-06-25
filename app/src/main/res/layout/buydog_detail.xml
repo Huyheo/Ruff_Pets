@@ -240,6 +240,7 @@
 
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:gravity="center"
 							android:layout_marginLeft="23dp"
 							android:layout_marginTop="20dp"
 							android:text="@string/corgi_string"
@@ -329,15 +330,15 @@
 					android:layout_marginTop="2dp"
 					android:layout_marginLeft="350dp"
 					app:srcCompat="@drawable/vector_ek119"
-					android:visibility="visible"/>
+					android:visibility="gone"/>
 				<com.google.android.material.floatingactionbutton.FloatingActionButton
 					android:id="@+id/imageButton1"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="2dp"
-					android:layout_marginLeft="280dp"
+					android:layout_marginLeft="285dp"
 					app:srcCompat="@drawable/vector_ek65"
-					android:visibility="visible"/>
+					android:visibility="gone"/>
 
 			</RelativeLayout>
 

@@ -18,6 +18,7 @@
 package exportkit.xd.activity;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -69,6 +71,7 @@ public class buydog_detail_activity extends Activity {
 	private User u;
 	private ImageView hinhanh;
 	private FloatingActionButton del;
+	private FloatingActionButton edit;
 	private TextView status;
 	private RelativeLayout call;
 
@@ -90,6 +93,7 @@ public class buydog_detail_activity extends Activity {
 		loai=findViewById(R.id.loai1);
 		sdt=findViewById(R.id.sdt1);
 		del=findViewById(R.id.imageButton);
+		edit=findViewById(R.id.imageButton1);
 		status=findViewById(R.id.status);
 		call=findViewById(R.id.frame_26);
 
@@ -111,6 +115,27 @@ public class buydog_detail_activity extends Activity {
 			}
 		});
 
+		del.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new AlertDialog.Builder(buydog_detail_activity.this).setIcon(android.R.drawable.ic_delete)
+						.setTitle("Delete post").setMessage("Are you sure you want to delete this post?")
+						.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								mDatabase.child("dog").child("dog"+String.valueOf(input+1)).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+									@Override
+									public void onComplete(@NonNull Task<Void> task) {
+										if (task.isSuccessful()){
+											Toast.makeText(buydog_detail_activity.this, "Delete Successfully!", Toast.LENGTH_SHORT).show();
+										}
+										else Toast.makeText(buydog_detail_activity.this, "Delete Failed!", Toast.LENGTH_SHORT).show();
+									}
+								});
+							}
+						}).setNegativeButton("No", null).show();
+			}
+		});
 
 		mDatabase.child("dog").child("dog"+String.valueOf(input+1)).
 				get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -167,13 +192,14 @@ public class buydog_detail_activity extends Activity {
 					if (user.getUid().equals(u.getUid())){
 						sdt.setText("Bởi tôi");
 						del.setVisibility(View.VISIBLE);
+						edit.setVisibility(View.VISIBLE);
 					}
 					else if (((String)u.getName()).length()>0&&((String)u.getPhone()).length()>0)
-						sdt.setText((String)u.getName()+", "+(String)u.getPhone());
+						sdt.setText("Bởi "+(String)u.getName()+", "+(String)u.getPhone());
 					else if (((String)u.getPhone()).length()>0&&((String)u.getName()).length()==0)
-						sdt.setText((String)u.getEmail()+", "+(String)u.getPhone());
+						sdt.setText("Bởi "+(String)u.getEmail()+", "+(String)u.getPhone());
 					else if (((String)u.getName()).length()==0&&((String)u.getPhone()).length()==0)
-						sdt.setText((String)u.getEmail());
+						sdt.setText("Bởi "+(String)u.getEmail());
 				}
 			}
 		});

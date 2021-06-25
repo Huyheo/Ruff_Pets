@@ -133,7 +133,7 @@ import exportkit.xd.model.dog;
 		addBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(buydogs_activity.this , buydog_detail_activity.class));
+				startActivity(new Intent(buydogs_activity.this , buydog_additem_activity.class));
 			}
 		});
 

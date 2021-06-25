@@ -18,6 +18,7 @@
 package exportkit.xd.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -56,6 +57,9 @@ public class service_detail_activity extends Activity {
 	private TextView gia;
 	private ImageView hinhanh;
 	private dichvu dichvu1;
+	private RelativeLayout call;
+	private TextView sdt;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -68,6 +72,19 @@ public class service_detail_activity extends Activity {
 		gia=findViewById(R.id.gia);
 		hinhanh=findViewById(R.id.rectangle_15_ek1);
 		back=findViewById(R.id.frame_17_ek4);
+		call=findViewById(R.id.frame_26_ek1);
+		sdt=findViewById(R.id.sdt);
+
+		call.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String phone = sdt.getText().toString().trim();
+				if (phone.length() > 0) {
+					Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+					startActivity(intent);
+				}
+			}
+		});
 
 		back.setOnClickListener(new View.OnClickListener() {
 			@Override
