@@ -1,6 +1,6 @@
 # Ruff Pets
 
-![image](https://user-images.githubusercontent.com/45762333/123438648-2178bb00-d5fb-11eb-90af-82f436849631.png)
+![image](https://user-images.githubusercontent.com/45762333/123441036-9c42d580-d5fd-11eb-8e87-75a49ccbe878.png)
 
 ## Giới thiệu
   - Bạn là người yêu quý và cũng như đang tìm kiếm những người bạn 4 chân trung thành cho mình
@@ -17,6 +17,9 @@
   - Xem/Sửa/Xoá/Tìm kiếm các bài đăng bán chó
   - Xem các bài đăng dịch vụ
 ## Screenshot
+![image](https://user-images.githubusercontent.com/45762333/123440895-7b7a8000-d5fd-11eb-8e28-b80fc56f62ce.png)
+
+
 ![image](https://user-images.githubusercontent.com/45762333/123439968-7e28a580-d5fc-11eb-8bd8-2fe6a6a7c17b.png)
 ![image](https://user-images.githubusercontent.com/45762333/123440138-aadcbd00-d5fc-11eb-81a2-ce8303e680d5.png)
 ![image](https://user-images.githubusercontent.com/45762333/123440620-2f2f4000-d5fd-11eb-95f7-8ac4b52799f2.png)
@@ -30,3 +33,5 @@
 ![image](https://user-images.githubusercontent.com/45762333/123440498-0dce5400-d5fd-11eb-9362-52c0b879e47b.png)
 ![image](https://user-images.githubusercontent.com/45762333/123440449-fe4f0b00-d5fc-11eb-9cb8-ed2051100755.png)
 ![image](https://user-images.githubusercontent.com/45762333/123440536-17f05280-d5fd-11eb-8ef6-50fb016b0e5b.png)
+
+
