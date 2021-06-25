@@ -35,18 +35,22 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 import exportkit.xd.R;
+import exportkit.xd.model.User;
 
-    public class register_activity extends Activity {
+	public class register_activity extends Activity {
 
 	private EditText email;
 	private EditText password;
 	private EditText rePassword;
 	private RelativeLayout register;
 	private TextView login;
-
+	private FirebaseUser user;
 	private FirebaseAuth auth;
+	private DatabaseReference mDatabase;
 
 
 	private RelativeLayout back;
@@ -63,7 +67,7 @@ import exportkit.xd.R;
 		register=findViewById(R.id.button_ek3);
 		login=findViewById(R.id._log_in_);
 		back=findViewById(R.id.frame_17_ek4);
-
+		user = FirebaseAuth.getInstance().getCurrentUser();
 
 		auth= FirebaseAuth.getInstance();
 
@@ -119,6 +123,9 @@ import exportkit.xd.R;
 							@Override
 							public void onComplete(@NonNull Task<Void> task) {
 								if (task.isSuccessful()) {
+									User NewUser = new User(user.getUid(),email,"","");
+									mDatabase.child("User").child(user.getUid()).setValue(NewUser);
+
 									Toast.makeText(register_activity.this, "Please check email for verification.", Toast.LENGTH_SHORT).show();
 									FirebaseAuth.getInstance().signOut();
                                     startActivity(new Intent(register_activity.this, home_activity.class));

@@ -11,14 +11,15 @@ import com.squareup.picasso.Picasso;
 
 import exportkit.xd.R;
 
-public class buydog_additem_activity extends Activity {
+public class buydog_edititem_activity extends Activity {
+
     private ImageView img;
     private RelativeLayout back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buydog_additem);
+        setContentView(R.layout.buydog_edititem);
 
         img=findViewById(R.id.imageView);
         back=findViewById(R.id.frame_17_ek2);
@@ -29,7 +30,5 @@ public class buydog_additem_activity extends Activity {
                 finish();
             }
         });
-
-        Picasso.get().load(Uri.parse("https://firebasestorage.googleapis.com/v0/b/fir-demo-90f36.appspot.com/o/wiggle_logo.png?alt=media&token=75f58293-713f-400a-a374-7a532f1dbc7b")).into(img);
     }
 }

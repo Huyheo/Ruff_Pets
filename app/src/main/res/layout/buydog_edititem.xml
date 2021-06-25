@@ -335,7 +335,7 @@
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="60dp"
 					android:layout_marginTop="10dp"
-					android:text="Add Post"
+					android:text="Edit Post"
 					android:textColor="@color/search_color"
 					android:textSize="36sp"
 					android:textStyle="bold" />
@@ -429,6 +429,18 @@
 					android:textColor="@color/search_color"
 					android:textSize="16sp"
 					android:textStyle="bold" />
+
+				<Switch
+					android:id="@+id/switch1"
+					android:textSize="36dp"
+					android:textStyle="bold"
+					android:textColor="@color/search_color"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dp"
+					android:layout_marginLeft="250dp"
+					android:text="Sold" />
+
 
 
 				<com.google.android.material.chip.ChipGroup

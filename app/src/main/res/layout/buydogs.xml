@@ -225,7 +225,7 @@
 					android:id="@+id/addItem"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="600dp"
+					android:layout_marginTop="640dp"
 					android:layout_marginLeft="330dp"
 					android:clickable="true"
 					app:srcCompat="@drawable/ic_baseline_add_24" />
