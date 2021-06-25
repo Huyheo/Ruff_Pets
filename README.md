@@ -9,11 +9,12 @@
   # Hãy đến với Ruff Pets chúng tôi
 ## Prerequisites
   - Bản Android Studio mới nhất (4.2.1)
-  - Khuyến nghị dùng điện thoại Pixel 2XL để chạy ứng dụng
+  - Khuyến nghị dùng điện thoại Pixel 2XL(7.1.1) để chạy ứng dụng
   - Firebase Realtime Database
 ## Các tính năng
   - Đăng nhập/Đăng ký user bằng Firebase Authentication
-  - Verify account và Reset password bằng Firebase
+  - Verify account và Reset password bằng Firebase Email Verify
+  - Chỉnh sửa thông tin cá nhân
   - Xem/Sửa/Xoá/Tìm kiếm các bài đăng bán chó
   - Xem các bài đăng dịch vụ
 ## Screenshot
