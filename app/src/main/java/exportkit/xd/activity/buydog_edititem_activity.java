@@ -73,6 +73,7 @@ public class buydog_edititem_activity extends Activity {
     private Uri imageuri;
     private FirebaseUser user;
     private DatabaseReference dogDatabae;
+    private Switch sold;
 
 
     int iddog;
@@ -112,6 +113,7 @@ public class buydog_edititem_activity extends Activity {
                 soldswitch=findViewById(R.id.switchsold);
                 btneditok= findViewById(R.id.btneditok);
                 btnloadimg =findViewById(R.id.buttonloadimg);
+                sold=findViewById(R.id.switchsold);
 
                 user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -131,6 +133,7 @@ public class buydog_edititem_activity extends Activity {
                     tittle.setText(dog1.getTitle().toString());
                     mota.setText(dog1.getMota().toString());
                     age.setText(dog1.getAge().toString());
+                    sold.setChecked(!dog1.isTrang_thai());
 
                     gioitinh = dog1.getGioitinh();
 
@@ -377,13 +380,9 @@ public class buydog_edititem_activity extends Activity {
             Toast.makeText(buydog_edititem_activity.this,"Empty credentails!", Toast.LENGTH_SHORT).show();
         }
         else {
-            if (chipnam.isChecked()) {
-                txt_gioitinh = "Male";
-            } else {
-                txt_gioitinh = "Female";
-            }
 //            Toast.makeText(buydog_additem_activity.this, txt_gioitinh+String.valueOf(Collections.max(dogs)), Toast.LENGTH_SHORT).show();
             dog1.setHinhanh(uri.toString());
+            dog1.setTrang_thai(!sold.isChecked());
             dogDatabae.child("dog"+String.valueOf(dog1.getId()+1)).setValue(dog1);
         }
         finish();
